@@ -1,0 +1,71 @@
+/*
+https://www.reddit.com/r/FirefoxCSS/comments/gdsu1l/url_color_based_on_ssl/
+*/
+
+#urlbar {
+  z-index: 3 !important;
+}
+#urlbar-background {
+  z-index: -2 !important;
+}
+
+#identity-box {
+--focus-offset: 16px;
+}
+:root:not([uidensity="compact"]) #identity-box {
+--focus-offset: 15px;
+}
+#identity-box::after {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: calc(100% + var(--focus-offset));
+  top: 0;
+  left: 0;
+  background: var(--security-color, rgba(0, 0, 0, 0.5));
+  opacity: .25;
+  transition: background 400ms linear;
+  z-index: -1;
+  pointer-events: none;
+  touch-action: none;
+
+}
+#urlbar[focused] #identity-box::after {
+  left: calc(var(--focus-offset) * -1);
+}
+#urlbar-input, #identity-icon-labels {
+    text-shadow: none !important;
+}
+
+/* BLUE..: about:config                                                                                                           */
+#urlbar[pageproxystate='valid'] #identity-box.chromeUI::after { background: #0a84ff; }
+
+/* GREEN.: https://www.github.com/                                                                                                */
+#urlbar[pageproxystate='valid'] #identity-box.verifiedIdentity:after{ background: #058b00; }
+
+/* GREEN.: https://www.google.com/                                                                                                */
+#urlbar[pageproxystate='valid'] #identity-box.verifiedDomain:after{ background: #12bc00; }
+
+/* YELLOW: https://mixed-script.badssl.com/                                                                                       */
+#urlbar[pageproxystate='valid'] #identity-box.mixedActiveBlocked:after { background: #d7b600; }
+
+/* YELLOW: https://mixed.badssl.com/                                                                                              */
+#urlbar[pageproxystate='valid'] #identity-box.mixedDisplayContent:after { background: #d7b600; }
+
+/* YELLOW: https://very.badssl.com/                                                                                               */ 
+#urlbar[pageproxystate='valid'] #identity-box.mixedDisplayContentLoadedActiveBlocked:after { background: #d7b600; }
+
+/* YELLOW: https://self-signed.badssl.com/                                                                                        */
+#urlbar[pageproxystate='valid'] #identity-box.certUserOverridden:after { background: #ffe900; }
+
+/* YELLOW: Don't know an example for this                                                                                         */
+#urlbar[pageproxystate='valid'] #identity-box.weakCipher:after { background: #a47f00; }
+
+/* YELLOW: https://mixed-script.badssl.com/                                                                                       */
+#urlbar[pageproxystate='valid'] #identity-box.mixedActiveContent:after { background: #d70022; }
+
+/* RED..: http://http-login.badssl.com/                                                                                           */
+#urlbar[pageproxystate='valid'] #identity-box.insecureLoginForms:after { background: #a4000f; }
+
+/* RED..: http://www.httpvshttps.com/                                                                                             */
+#urlbar[pageproxystate='valid'] #identity-box.notSecure::after { background: #a4000f; }
