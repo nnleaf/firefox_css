@@ -1,0 +1,70 @@
+/*--- Removes White Background Refresh Flicker ---*/
+.browserContainer {
+  background-color: var(--url-and-searchbar-background-color, hsla(225,10.8%,14.5%)) !important;
+}
+
+/*--- Tab Text Size ---*/
+.tab-text {
+  font-size: 15px !important;
+}
+
+/*--- Collapsing URL Bar ---*/
+#navigator-toolbox {
+  -moz-appearance: none;
+  background-color: transparent !important;
+  border-top: none;
+}
+.browser-toolbar:not(.titlebar-color),
+#tabbrowser-tabs:not([movingtab])
+  > .tabbrowser-arrowscrollbox
+  > .tabbrowser-tab
+  > .tab-stack
+  > .tab-background[multiselected='true']:-moz-lwtheme,
+#tabbrowser-tabs:not([movingtab])
+  > .tabbrowser-arrowscrollbox
+  > .tabbrowser-tab
+  > .tab-stack
+  > .tab-background[selected='true']:-moz-lwtheme,
+* {
+  --tab-line-color: var(--color1);
+  --tab-min-width: 76px;
+}
+#urlbar, #navigator-toolbox #searchbar {border: none !important;}
+
+#urlbar:not(.megabar):not([focused='true']):-moz-lwtheme,
+#urlbar.megabar:not([focused='true']):-moz-lwtheme > #urlbar-background,
+#navigator-toolbox #searchbar:not(:focus-within):-moz-lwtheme,
+#navigator-toolbox {
+  border: none !important;
+}
+#urlbar:not(.megabar):-moz-lwtheme,
+#urlbar.megabar:-moz-lwtheme > #urlbar-background,
+#navigator-toolbox #searchbar:-moz-lwtheme {
+  background-color: var(--background) !important;
+}
+#navigator-toolbox {
+  --tabs-border-color: var(--background) !important;
+}
+
+toolbox {
+  z-index: 10;
+  margin-top: 0px !important;
+  margin-bottom: -40px !important;
+  height: 0 !important;
+  pointer-events: none;
+}
+vbox {pointer-events: all;}
+
+
+#nav-bar {
+  opacity: 0;
+  transform-origin: 0 0;
+  pointer-events: none;
+  transition: transform, ease-in-out 0.2s, opacity 0.2s ease-in-out !important;
+}
+/* All the states in which the URL bar is visible */
+vbox:hover ~ #nav-bar, toolbox:focus-within > #nav-bar, #nav-bar:hover, #mainPopupSet:hover ~ box #nav-bar, #mainPopupSet:focus-within ~ box #nav-bar {
+  opacity: 1;
+  transform: none;
+  pointer-events: all;
+}
