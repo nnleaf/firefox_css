@@ -23,7 +23,7 @@ https://www.reddit.com/r/FirefoxCSS/comments/gdsu1l/url_color_based_on_ssl/
   top: 0;
   left: 0;
   background: var(--security-color, rgba(0, 0, 0, 0.5));
-  opacity: .25;
+  opacity: .2;
   transition: background 400ms linear;
   z-index: -1;
   pointer-events: none;
