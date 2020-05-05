@@ -1,4 +1,4 @@
-# firefoxtheme
+# firefox_css
 Personal Firefox Theme
 
 # Instructions
