@@ -1,0 +1,30 @@
+
+/* New Tab Page Background Color
+https://www.reddit.com/r/firefox/comments/7cwojt/firefox_57_is_nice_but_still_no_dark_background/*/
+/*
+@-moz-document url(about:newtab) {
+  .activity-stream {
+      background-color: #333333 !important;
+  /*}
+  .top-sites-list .top-site-outer > a {
+      color: #dddddd !important;
+  }
+  .tile {
+    filter: grayscale(42%) !important;
+    opacity: .9 !important;
+  }
+  .activity-stream .top-site-inner .title {
+    color: #fff !important;
+  }
+  /*@media (min-width: 1280px) {
+    .activity-stream main {
+      width: : 989px !important;
+    }
+  }
+}*/
+
+@-moz-document url("about:home"), url("about:newtab") {
+  .activity-stream {
+      background-color: #333333 !important;
+  }
+}
