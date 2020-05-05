@@ -1,0 +1,39 @@
+@-moz-document url("about:newtab"), url("about:home"), url("about:blank") {
+    
+  /*--- Font ---*/
+  * { 
+    font-family: "SF Pro Text" !important; 
+  }
+  
+  body {
+    /*--- Background Color ---*/
+    --newtab-background-color: rgb(33, 35, 41) !important;
+
+    /*--- Search Bar Background Color ---*/
+    --newtab-textbox-background-color: rgb(43, 45, 53)  !important;
+    --newtab-textbox-border: rgba(249, 249, 250, 0.2) !important;
+
+    /*--- Search Bar Border Color */
+     --newtab-search-border-color: rgb(61, 65, 77) !important;
+    
+    /*--- Search Bar Active Shadow ---*/
+    --newtab-textbox-focus-color: #45A1FF !important;
+    --newtab-textbox-focus-boxshadow: 0 0 0 1px #45A1FF, 0 0 0 4px rgba(69, 161, 255, 0.3) !important;
+    
+    /*--- Search Bar Text Color ---*/
+    --newtab-text-primary-color: #F9F9FA !important;
+
+  }
+
+  /*--- Firefox Text Color ---*/
+  .wordmark {
+    fill: rgba(255, 255, 255, 0.80) !important;
+  }
+}
+
+  /*--- Unused Options---*/
+  /*
+    --- Remove Firefox Text
+    .wordmark {display: none !important;}
+    --- Center Logo after removing Text
+    .logo-and-wordmark {margin-bottom: 30px !important;}
