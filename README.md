@@ -15,3 +15,5 @@ Personal Firefox Theme
 Stylesheets under "Chrome" in `userChrome.css`
 
 Stylesheets under "Content" in `userContent.css`
+
+/home/nn/.mozilla/firefox/bhrs4fv5.default-nightly/chrome

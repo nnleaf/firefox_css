@@ -39,7 +39,7 @@
 toolbox {
   z-index: 10;
   margin-top: 0px !important;
-  margin-bottom: -40px !important;
+  margin-bottom: -32px !important;
   height: 0 !important;
   pointer-events: none;
 }
