@@ -37,10 +37,10 @@
 }
 
 toolbox {
-  z-index: 10;
+  z-index: 1;
   margin-top: 0px !important;
   margin-bottom: -32px !important;
-  height: 0 !important;
+  height: !important;
   pointer-events: none;
 }
 vbox {pointer-events: all;}
@@ -50,7 +50,7 @@ vbox {pointer-events: all;}
   opacity: 0;
   transform-origin: 0 0;
   pointer-events: none;
-  transition: transform, ease-in-out 0.2s, opacity 0.2s ease-in-out !important;
+  transition: transform, ease-in-out 0.5s, opacity 0.2s ease-in-out !important;
 }
 /* All the states in which the URL bar is visible */
 vbox:hover ~ #nav-bar, toolbox:focus-within > #nav-bar, #nav-bar:hover, #mainPopupSet:hover ~ box #nav-bar, #mainPopupSet:focus-within ~ box #nav-bar {
